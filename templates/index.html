@@ -1,0 +1,392 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>About - Mentor Bootstrap Template</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body class="index-page">
+
+<header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+
+            <h1 class="sitename">AKILI AFYA</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="{% url 'home' %}">Home<br></a></li>
+                <li><a href="{% url 'about' %}" class="active">About</a></li>
+                <li><a href="{% url 'Services' %}">Services</a></li>
+                <li><a href="{% url 'trainers' %}">Service Professionals</a></li>
+                <li><a href="{% url 'upload' %}">Upload Professional</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="btn-getstarted" href="{% url 'Services' %}">Get Started</a>
+
+    </div>
+</header>
+
+<main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+        <img src="{% static 'assets/img/for use/6.jpeg' %}" alt="" data-aos="fade-in">
+
+        <div class="container">
+            <h2 data-aos="fade-up" data-aos-delay="100">Your Mental Health Today,<br>Saves Tomorrow</h2>
+            <p data-aos="fade-up" data-aos-delay="200">At AkiliAfya, we empower our service users to reach their goals with personalized counseling and expert guidance. Start your mental health journey with us today and unlock your potential for tomorrow!</p>
+            <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="{% url 'Services' %}" class="btn-get-started">Get Started</a>
+            </div>
+        </div>
+
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'assets/img/for use/16.jpeg' %}" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Empowering individuals, Shaping Futures</h3>
+                    <p class="fst-italic">
+                        At AkiliAfya, we believe in providing personalized experiences that help individuals unlock their full life potential. Our dedicated team of professionals offers expert guidance, support, and resources to ensure your success.
+                    </p>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span>Expert professionals tailored to your personal needs.</span></li>
+                        <li><i class="bi bi-check-circle"></i> <span>Interactive sessions and guidance materials.</span></li>
+                        <li><i class="bi bi-check-circle"></i> <span>Flexible scheduling to fit your lifestyle and goals.</span></li>
+                    </ul>
+                    <a href="{% url 'about' %}" class="read-more"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+
+                </div>
+
+            </div>
+        </div>
+    </section><!-- /About Section -->
+
+    <!-- Counts Section -->
+    <section id="counts" class="section counts light-background">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="2000" data-purecounter-duration="1" class="purecounter"></span>
+                        <p> Clients Served</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Available Services</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Upcoming Events</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Expert Professionals</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Counts Section -->
+
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="section why-us">
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="why-box">
+                        <h3>Why Choose Our Services over others?</h3>
+                        <p>
+                            Our platform offers a wide variety of professional services designed to meet the needs of individuals at all levels. With expert professionals, personalized one on one experiences, and flexible schedules, we provide the tools for success in every aspect of your life.
+                        </p>
+                        <div class="text-center">
+                            <a href="#" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Why Box -->
+
+                <div class="col-lg-8 d-flex align-items-stretch">
+                    <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="col-xl-4">
+                            <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                <i class="bi bi-clipboard-data"></i>
+                                <h4><a href="{% url 'trainers' %}">Expert Professionals</a></h4>
+                                <p>Our service providers are experienced professionals who are dedicated to helping individuals succeed.</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                        <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                <i class="bi bi-gem"></i>
+                                <h4><a href="{% url 'Services' %}">Wide Range of services</a></h4>
+                                <p>We offer a diverse selection of services across various aspects and levels to meet every client’s needs.</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                        <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
+                            <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                                <i class="bi bi-inboxes"></i>
+                                <h4>Flexible Consulting</h4>
+                                <p>Our services are designed to be flexible, allowing clients to be served at their own pace and schedule.</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Why Us Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="features-item">
+                        <i class="bi bi-book" style="color: #ffbb2c;"></i>
+                        <h3><a href="" class="stretched-link">Wide Services Selection</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="features-item">
+                        <i class="bi bi-person-circle" style="color: #5578ff;"></i>
+                        <h3><a href="" class="stretched-link">Expert Professionals</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="features-item">
+                        <i class="bi bi-calendar-check" style="color: #e80368;"></i>
+                        <h3><a href="" class="stretched-link">Flexible Scheduling</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="features-item">
+                        <i class="bi bi-globe" style="color: #e361ff;"></i>
+                        <h3><a href="" class="stretched-link">Global Access</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="features-item">
+                        <i class="bi bi-chat-square" style="color: #47aeff;"></i>
+                        <h3><a href="" class="stretched-link">Interactive Counselling</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="features-item">
+                        <i class="bi bi-award" style="color: #ffa76e;"></i>
+                        <h3><a href="" class="stretched-link">Accredited Professionals</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="features-item">
+                        <i class="bi bi-currency-dollar" style="color: #11dbcf;"></i>
+                        <h3><a href="" class="stretched-link">Affordable Pricing</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="features-item">
+                        <i class="bi bi-people" style="color: #4233ff;"></i>
+                        <h3><a href="" class="stretched-link">Community Support</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="900">
+                    <div class="features-item">
+                        <i class="bi bi-laptop" style="color: #b2904f;"></i>
+                        <h3><a href="" class="stretched-link">Online Interaction Platform</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="features-item">
+                        <i class="bi bi-robot" style="color: #b20969;"></i>
+                        <h3><a href="" class="stretched-link">AI-Powered Consulting and Querying</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1100">
+                    <div class="features-item">
+                        <i class="bi bi-bookmark" style="color: #ff5828;"></i>
+                        <h3><a href="" class="stretched-link">Personalized Pathways</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+                <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1200">
+                    <div class="features-item">
+                        <i class="bi bi-clock" style="color: #29cc61;"></i>
+                        <h3><a href="" class="stretched-link">Real-Time Progress Tracking</a></h3>
+                    </div>
+                </div><!-- End Feature Item -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Features Section -->
+
+
+
+
+</main>
+
+<footer id="footer" class="footer position-relative success-background">
+    <div class="container footer-top">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6 footer-about">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <span class="sitename">AkiliAfya</span>
+                </a>
+                <div class="footer-contact pt-3">
+                    <p>KDS Building 2nd Floor Room 201</p>
+                    <p class="mt-3"><strong>Phone:</strong> <span>+254 790 846 712</span></p>
+                    <p><strong>Email:</strong> <span>help@akiliafya.com</span></p>
+                </div>
+                <div class="social-links d-flex mt-4">
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Professionals</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#">Mental Health Assessment</a></li>
+                    <li><a href="#">Group Counselling</a></li>
+                    <li><a href="#">One on One Counselling</a></li>
+                    <li><a href="#">Career Counseling</a></li>
+                    <li><a href="#">Tele- counselling</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-12 footer-newsletter">
+                <h4>Our Newsletter</h4>
+                <p>Stay updated with the latest news, services, and offers by subscribing to our newsletter!</p>
+                <form action="" method="post" class="php-email-form">
+                    <div class="newsletter-form">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <input type="submit" value="Subscribe">
+                    </div>
+                    <div class="loading">Loading...</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+        <p>© <span>Copyright2024</span> <strong class="px-1 sitename">AkiliAfya</strong> <span>All Rights Reserved</span></p>
+        <div class="credits">
+        </div>
+    </div>
+
+
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+<!-- Main JS File -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

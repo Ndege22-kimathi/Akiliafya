@@ -1,0 +1,134 @@
+{% extends 'starter-page.html' %}
+{% block body %}
+
+<!-- Page Title -->
+<div class="page-title" data-aos="fade">
+    <div class="heading">
+        <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1>Course Plans</h1>
+                    <p>Explore our flexible course plans and choose the one that suits your needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- End Page Title -->
+
+<!-- Course Plans Section -->
+<section id="course-plans" class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <!-- Basic Plan -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card plan-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Basic Plan</h5>
+                        <p class="price text-center">$99 <span>/ course</span></p>
+                        <p class="text-center"><strong>What is Basic</strong> This plan allows you to take one course of your choice, ideal for those exploring new skills or specific topics.</p>
+                        <div class="text-center">
+                            <button class="btn btn-outline-success mt-2" data-bs-toggle="modal" data-bs-target="#basicCoursesModal">View Courses</button>
+                            <a href="{% url 'checkout' %}?plan=basic" class="btn btn-success mt-2">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standard Plan -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card plan-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Standard Plan</h5>
+                        <p class="price text-center">$199 <span>/ 3 courses</span></p>
+                        <p class="text-center"><strong>What is Standard</strong> This plan grants access to any three courses. Perfect for learners looking to expand their expertise in multiple areas.</p>
+                        <div class="text-center">
+                            <button class="btn btn-outline-success mt-2" data-bs-toggle="modal" data-bs-target="#standardCoursesModal">View Courses</button>
+                            <a href="{% url 'checkout' %}?plan=standard" class="btn btn-success mt-2">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card plan-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Premium Plan</h5>
+                        <p class="price text-center">$299 <span>/ all courses</span></p>
+                        <p class="text-center"><strong>What is Premium </strong>This plan gives you unlimited access to all our courses, ideal for professionals looking for comprehensive training.</p>
+                        <div class="text-center">
+                            <button class="btn btn-outline-success mt-2" data-bs-toggle="modal" data-bs-target="#premiumCoursesModal">View Courses</button>
+                            <a href="{% url 'checkout' %}?plan=premium" class="btn btn-success mt-2">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section><!-- End Course Plans Section -->
+
+<!-- Modals for Course Lists -->
+<!-- Basic Courses Modal -->
+<div class="modal fade" id="basicCoursesModal" tabindex="-1" aria-labelledby="basicCoursesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="basicCoursesModalLabel">Courses in Basic Plan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>Introduction to Web Design</li>
+                    <li>Basics of Copywriting</li>
+                    <li>Fundamentals of Data Analytics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Standard Courses Modal -->
+<div class="modal fade" id="standardCoursesModal" tabindex="-1" aria-labelledby="standardCoursesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="standardCoursesModalLabel">Courses in Standard Plan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>Advanced Web Design</li>
+                    <li>Copywriting for Marketing</li>
+                    <li>Intermediate Data Analytics</li>
+                    <li>Introduction to Cybersecurity</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Premium Courses Modal -->
+<div class="modal fade" id="premiumCoursesModal" tabindex="-1" aria-labelledby="premiumCoursesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="premiumCoursesModalLabel">Courses in Premium Plan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>Advanced Web Design</li>
+                    <li>Copywriting for Marketing</li>
+                    <li>Intermediate Data Analytics</li>
+                    <li>Introduction to Cybersecurity</li>
+                    <li>Expert-Level Data Analytics</li>
+                    <li>Comprehensive Cybersecurity</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

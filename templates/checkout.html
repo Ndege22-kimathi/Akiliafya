@@ -1,0 +1,81 @@
+<!-- Checkout Page -->
+{% extends 'starter-page.html' %}
+{% block body %}
+
+<!-- Page Title -->
+<div class="page-title" data-aos="fade">
+    <div class="heading">
+        <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1>Checkout</h1>
+                    <p>Complete your registration by filling out the form below.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- End Page Title -->
+
+<!-- Checkout Form Section -->
+<section id="checkout" class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Finalize Your Course Enrollment</h4>
+
+                        <!-- Form -->
+                        <form action="#" method="POST">
+                            {% csrf_token %}
+
+                            <!-- Personal Information -->
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" name="name" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" name="email" placeholder="Enter your email address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" name="phone" placeholder="Enter your phone number" required>
+                            </div>
+
+                            <!-- Redirect to Course Plans -->
+                            <div class="form-group mb-3">
+                                <p class="text-center">Not sure about your course plan?</p>
+                                <a href="{% url 'plan' %}" class="btn btn-link text-center">
+                                    <i class="bi bi-info-circle"></i> View Course Plans
+                                </a>
+                            </div>
+
+                            <!-- Payment Information -->
+                            <div class="form-group">
+                                <label for="payment-method">Payment Method</label>
+                                <select id="payment-method" class="form-control" name="payment_method" required>
+                                    <option value="mpesa">M-Pesa</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mpesa-number">M-Pesa Phone Number</label>
+                                <input type="tel" id="mpesa-number" class="form-control" name="mpesa_number" placeholder="Enter your M-Pesa phone number" required>
+                            </div>
+
+                            <div class="btn-wrap text-center mt-4">
+                                <button type="submit" class="btn btn-success btn-lg">
+                                    <i class="bi bi-cash-coin"></i> Make Payment
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End Checkout Form Section -->
+
+{% endblock %}

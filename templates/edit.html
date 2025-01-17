@@ -1,0 +1,88 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+{% block body %}
+
+<!-- Checkout Edit Section -->
+<section id="checkout" class="checkout section light-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2 class="text-md-center">Update Your Checkout Details</h2>
+        <p class="text-sm-center">Make sure your personal and payment details are up-to-date for a smooth checkout process.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <form method="POST" action="/update/{{ checkout.id }}">
+            {% csrf_token %}
+            <div class="row">
+                <!-- Name Field -->
+                <div class="col-md-6 col-lg-4 form-group">
+                    <input type="text" name="name" class="form-control" id="name" value="{{ checkout.name }}" placeholder="Your Name" required>
+                </div>
+                <!-- Email Field -->
+                <div class="col-md-6 col-lg-4 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control" name="email" id="email" value="{{ checkout.email }}" placeholder="Your Email" required>
+                </div>
+                <!-- Phone Field -->
+                <div class="col-md-6 col-lg-4 form-group mt-3 mt-md-0">
+                    <input type="tel" class="form-control" name="phone" id="phone" value="{{ checkout.phone }}" placeholder="Your Phone" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Course Selection -->
+                <div class="col-md-6 col-lg-4 form-group mt-3">
+                    <label for="course">Select Course</label>
+                    <select name="course" id="course" class="form-select" required>
+                        <option value="web_design" {% if checkout.course == 'web_design' %}selected{% endif %}>Web Design</option>
+                        <option value="seo" {% if checkout.course == 'seo' %}selected{% endif %}>Search Engine Optimization</option>
+                        <option value="copywriting" {% if checkout.course == 'copywriting' %}selected{% endif %}>Copywriting</option>
+                        <option value="digital_marketing" {% if checkout.course == 'digital_marketing' %}selected{% endif %}>Digital Marketing</option>
+                    </select>
+                </div>
+
+                <!-- Billing Address -->
+                <div class="col-md-6 col-lg-4 form-group mt-3">
+                    <input type="text" name="address" class="form-control" id="address" value="{{ checkout.address }}" placeholder="Billing Address" required>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="col-md-6 col-lg-4 form-group mt-3">
+                    <label for="payment-method">Select Payment Method</label>
+                    <select name="payment_method" id="payment-method" class="form-select" required>
+                        <option value="mpesa" {% if checkout.payment_method == 'mpesa' %}selected{% endif %}>M-Pesa</option>
+                        <!-- You can add more payment methods here, e.g., 'credit-card', 'paypal' -->
+                    </select>
+                </div>
+
+                <!-- M-Pesa Phone Number -->
+                <div class="col-md-6 col-lg-4 form-group mt-3">
+                    <input type="tel" name="mpesa_number" class="form-control" id="mpesa-number" value="{{ checkout.mpesa_number }}" placeholder="Enter M-Pesa Phone Number" required>
+                </div>
+            </div>
+
+            <!-- Message Field (Optional) -->
+            <div class="form-group mt-3">
+                <label for="message">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)">{{ checkout.message }}</textarea>
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mt-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your checkout details have been updated successfully. Thank you!</div>
+                <div class="text-center">
+                    <button type="submit">Update Checkout</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</section><!-- End Checkout Section -->
+
+{% endblock %}

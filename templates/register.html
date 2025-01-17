@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <style>
+        body {
+            background-color: #f0fff0; /* Light green background */
+        }
+        .form-control {
+            border: 2px solid #28a745; /* Light green border */
+            border-radius: 10px;
+        }
+        .form-control:focus {
+            box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+        }
+        .btn-primary {
+            background-color: #28a745; /* Light green button */
+            border-color: #28a745;
+        }
+        .btn-primary:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+        .card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-check-label a {
+            color: #28a745;
+            text-decoration: none;
+        }
+        .form-check-label a:hover {
+            text-decoration: underline;
+        }
+        .card-body {
+            padding: 3rem;
+        }
+        .row.justify-content-center {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        img.img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<section class="h-100">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color: #28a745;">Create an Account</p>
+
+                                <form class="mx-1 mx-md-4" method="POST">
+                                    {% csrf_token %}
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw" style="color: #28a745;"></i>
+                                        <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                                            <input type="text" name="name" id="form3Example1c" class="form-control" placeholder="Enter your name" required="required" />
+                                            <label class="form-label" for="form3Example1c">Your Name</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw" style="color: #28a745;"></i>
+                                        <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                                            <input type="text" name='username' id="form3Example3c" class="form-control" placeholder="Choose a username" required="required" />
+                                            <label class="form-label" for="form3Example3c">Your Username</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw" style="color: #28a745;"></i>
+                                        <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                                            <input type="password" name="password" id="form3Example4c" class="form-control" placeholder="Create a password" required="required" />
+                                            <label class="form-label" for="form3Example4c">Password</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check d-flex justify-content-center mb-5">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" required="required" />
+                                        <label class="form-check-label" for="form2Example3c">
+                                            I agree to all statements in <a href="#">Terms of Service</a>
+                                        </label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Register</button>
+                                    </div>
+
+                                    <p class="text-center">Already have an account? <a href="{% url 'login' %}" style="color: #28a745;">Login</a></p>
+
+                                </form>
+
+                            </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                <img src="{% static 'assets/img/img_2.png' %}" class="img-fluid" style="width: 100%; height: auto; max-height: 500px;" alt="Sample illustration">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

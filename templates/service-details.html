@@ -1,0 +1,223 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+{% block body %}
+    <h1 class="text-center"> SERVICE DETAILS</h1>
+    <p class="mb-0 text-sm-center">
+       Welcome to the course! Dive into a comprehensive learning experience designed to enhance your counseling skills and support your clients effectively. This course offers engaging content and interactive sessions tailored to help you excel in group counseling. Whether you're starting your journey or looking to refine your expertise, this course is the perfect opportunity to grow and make a meaningful impact on others' mental well-being.
+    </p>
+    <p class="mb-3 mt-5 text-sm-center">
+        <strong>Key Highlights:</strong> Hands-on exercises, expert-led sessions, and practical insights to apply
+        directly
+        to your career or personal development. Join us to explore new horizons and unlock your potential.
+    </p>
+
+    <!-- Breadcrumbs Section -->
+    <nav class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="current">Service Details</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Service Details Section -->
+    <section id="services-service-details" class="services-service-details section">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <!-- Main Course Content -->
+                <div class="col-lg-8">
+                    <img src="{% static 'assets/img/events-item-1.jpg' %}" class="img-fluid"
+                         alt="Service image showing a teacher and students">
+                    <h3>Comprehensive Learning Experience</h3>
+                    <p>This course offers an in-depth understanding of the core principles of effective group counseling.
+                        With an emphasis on practical applications, real-life scenarios, and case studies,
+                        the program aims to equip you with the skills necessary to support individuals in a group setting.
+                        Whether you're new to counseling or an experienced professional,
+                        this course provides valuable insights to enhance your practice and make a meaningful impact on those you help.
+                    </p>
+                </div>
+
+                <!-- Service Information -->
+                <div class="col-lg-4">
+                    <div class="service-info d-flex justify-content-between align-items-center">
+                        <h5>Professional</h5>
+                        <p><a href="#">Kith Mutuku</a></p>
+                    </div>
+                    <div class="service-info d-flex justify-content-between align-items-center">
+                        <h5>Service Fee</h5>
+                        <p>Ksh. 50,000</p>
+                    </div>
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Available Seats</h5>
+                        <p>25</p>
+                    </div>
+                    <div class="service-info d-flex justify-content-between align-items-center">
+                        <h5>Schedule</h5>
+                        <p>5:00 pm - 9:00 pm</p>
+                    </div>
+                    <!-- Enroll Button -->
+                    <div class="text-center mt-4">
+                        <a href="{% url 'checkout' %}" class="btn btn-primary btn-lg">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabs Section -->
+    <section id="tabs" class="tabs section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+                <!-- Tabs Navigation -->
+                <div class="col-lg-3">
+                    <ul class="nav nav-tabs flex-column" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#tab-1" role="tab"
+                               aria-controls="tab-1" aria-selected="true">Introduction</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2"
+                               aria-selected="false">Learning Objectives</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3"
+                               aria-selected="false">Modules Overview</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4"
+                               aria-selected="false">Assessment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-5" role="tab" aria-controls="tab-5"
+                               aria-selected="false">Enrollment</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tabs Content -->
+                <div class="col-lg-9 mt-4 mt-lg-0">
+                    <div class="tab-content">
+                        <!-- Tab 1: Introduction -->
+                        <div class="tab-pane active" id="tab-1" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-8 details">
+                                    <h3>Introduction to the Course</h3>
+                                    <p class="fst-italic">
+                                        In this section, we introduce the fundamentals of the service course and set the
+                                        foundation for learning.
+                                    </p>
+                                    <p>
+                                        This course is designed to provide a thorough understanding of the key concepts
+                                        and tools used in the field.
+                                        The content is structured to enhance practical skills, with case studies and
+                                        interactive sessions.
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <img src="{% static 'assets/img/for use/3.jpeg' %}"
+                                         alt="Course introduction illustration" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2: Learning Objectives -->
+                        <div class="tab-pane" id="tab-2" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-8 details">
+                                    <h3>Learning Objectives</h3>
+                                    <p class="fst-italic">
+                                        This section outlines the key learning objectives that professionals will achieve
+                                        upon completing the course.
+                                    </p>
+                                    <p>
+                                        By the end of this course, participants will have acquired advanced skills in
+                                        the subject, enabling them to
+                                        apply their knowledge in real-world scenarios. Learners will also be equipped
+                                        with the necessary tools to assess
+                                        and solve complex problems in their field of expertise.
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <img src="{% static 'assets/img/tabs/tab-2.png' %}"
+                                         alt="Illustration of course objectives" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 3: Modules Overview -->
+                        <div class="tab-pane" id="tab-3" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-8 details">
+                                    <h3>Modules Overview</h3>
+                                    <p class="fst-italic">
+                                        This section provides an overview of the modules that will be covered throughout
+                                        the sessions.
+                                    </p>
+                                    <p>
+                                        The course is divided into several modules that tackle different aspects of the
+                                        subject. Each module will be
+                                        accompanied by case studies, quizzes, and assignments to ensure thorough
+                                        understanding. Key topics include theory,
+                                        practical application, and industry trends.
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <img src="{% static 'assets/img/for use/23.jpeg' %}" alt="Module overview image"
+                                         class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 4: Assessment -->
+                        <div class="tab-pane" id="tab-4" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-8 details">
+                                    <h3>Course Assessment</h3>
+                                    <p class="fst-italic">
+                                        Learn about the various methods of assessment used in the sessions to evaluate
+                                        your progress.
+                                    </p>
+                                    <p>
+                                        Assessments will include session assignments, quizzes, and a final exam. These
+                                        assessments are designed to test your knowledge
+                                        and ability to apply what you've learned in real-world situations. Feedback will
+                                        be provided throughout the course to
+                                        guide your learning process.
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <img src="{% static 'assets/img/tabs/tab-4.png' %}"
+                                         alt="Assessment overview illustration" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 5: Enrollment -->
+                        <div class="tab-pane" id="tab-5" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-8 details">
+                                    <h3>How to Enroll</h3>
+                                    <p class="fst-italic">
+                                        Find out how you can enroll in the course and start your learning journey.
+                                    </p>
+                                    <p>
+                                        Enrollment is simple! Just click on the <a href="{% url 'checkout' %}"
+                                                                                   class="btn btn-primary">Enroll
+                                        Now</a>
+                                        and fill in your details. Once enrolled, you will receive access to the course
+                                        materials and a personalized schedule.
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <img src="{% static 'assets/img/tabs/tab-5.png' %}"
+                                         alt="Illustration of enrollment process" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

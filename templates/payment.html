@@ -1,0 +1,39 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+
+<h2 class="text-center my-4">Make a Payment</h2>
+
+<div class="container d-flex justify-content-center">
+  <div class="card shadow-lg p-4" style="max-width: 500px; width: 100%;">
+    <form method="post" action="{% url 'stk' %}">
+      {% csrf_token %}
+
+      <!-- Phone Number Input -->
+      <div class="form-group mb-3">
+        <label for="phone" class="form-label">Phone Number:</label>
+        <input type="number" class="form-control" id="phone" name="phone" value="254" placeholder="Enter your phone number">
+      </div>
+
+      <!-- Amount Input -->
+      <div class="form-group mb-3">
+        <label for="amount" class="form-label">Amount:</label>
+        <input type="text" class="form-control" id="amount" name="amount" placeholder="Enter the amount">
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success btn-lg">
+          <i class="bi bi-cash-coin"></i> Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
