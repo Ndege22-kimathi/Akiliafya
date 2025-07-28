@@ -1,0 +1,651 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Ubuntu Spirit - Celebrating African Excellence</title>
+    <meta name="description" content="A vibrant celebration of African culture, innovation, and community spirit">
+    <meta name="keywords" content="Africa, Ubuntu, Culture, Community, Innovation, Heritage">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Oswald:wght@200;300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --african-gold: #FFD700;
+            --african-red: #DC143C;
+            --african-green: #228B22;
+            --african-orange: #FF8C00;
+            --african-brown: #8B4513;
+            --african-black: #2F1B14;
+            --warm-white: #FFF8DC;
+            --earth-tone: #D2691E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            background: linear-gradient(135deg, var(--warm-white) 0%, #FFF 50%, var(--warm-white) 100%);
+            color: var(--african-black);
+            line-height: 1.6;
+        }
+
+        /* African Pattern Background */
+        .african-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 50%, var(--african-gold) 2px, transparent 2px),
+                radial-gradient(circle at 40% 20%, var(--african-red) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, var(--african-green) 1px, transparent 1px);
+            background-size: 40px 40px, 30px 30px, 50px 50px;
+            opacity: 0.1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        /* Header */
+        .navbar {
+            background: linear-gradient(90deg, var(--african-red), var(--african-orange), var(--african-gold));
+            padding: 1rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: white !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            padding: 8px 15px !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(47, 27, 20, 0.7), rgba(220, 20, 60, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="african" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="50" cy="50" r="30" fill="%23FFD700" opacity="0.3"/><polygon points="20,20 80,20 50,70" fill="%23DC143C" opacity="0.2"/></pattern></defs><rect width="100%" height="100%" fill="url(%23african)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="%23FFD700" opacity="0.6"/><circle cx="90" cy="20" r="1" fill="%23DC143C" opacity="0.4"/><circle cx="50" cy="90" r="1.5" fill="%23228B22" opacity="0.5"/></svg>');
+            background-size: 200px 200px;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { background-position: 0 0; }
+            100% { background-position: 200px 200px; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero .lead {
+            font-size: 1.5rem;
+            color: var(--warm-white);
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .ubuntu-quote {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--african-gold);
+            font-style: italic;
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Buttons */
+        .btn-african {
+            background: linear-gradient(45deg, var(--african-gold), var(--african-orange));
+            border: none;
+            color: var(--african-black);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-african:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+            color: var(--african-black);
+        }
+
+        .btn-outline-african {
+            border: 2px solid var(--african-gold);
+            color: var(--african-gold);
+            background: transparent;
+            font-weight: 600;
+            padding: 10px 28px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-african:hover {
+            background: var(--african-gold);
+            color: var(--african-black);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--african-red);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--african-gold), var(--african-orange));
+            border-radius: 2px;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--african-gold);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--african-red);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: var(--african-black);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Culture Section */
+        .culture-section {
+            background: linear-gradient(135deg, var(--african-red), var(--african-orange));
+            color: white;
+        }
+
+        .culture-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .culture-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--african-gold);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--african-black);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer h5 {
+            color: var(--african-gold);
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: var(--warm-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--african-gold);
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--african-red);
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--african-gold);
+            color: var(--african-black);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .lead {
+                font-size: 1.2rem;
+            }
+            
+            .ubuntu-quote {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="bi bi-heart-fill me-2"></i>Ubuntu Spirit
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#culture">Culture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#community">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#innovation">Innovation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="african-pattern"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 hero-content">
+                    <h1>Welcome to Ubuntu Spirit</h1>
+                    <p class="lead">Celebrating the vibrant tapestry of African culture, innovation, and the timeless philosophy of Ubuntu</p>
+                    <p class="ubuntu-quote">"I am because we are" - Ubuntu Philosophy</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#culture" class="btn btn-african">Explore Culture</a>
+                        <a href="#community" class="btn btn-outline-african">Join Community</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div style="font-size: 15rem; color: var(--african-gold); opacity: 0.3;">
+                        <i class="bi bi-globe-africa-middle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="section culture-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Rich African Heritage</h2>
+            <div class="row">
+                <div class="col-md-3 culture-item fade-in">
+                    <div class="culture-icon">
+                        <i class="bi bi-music-note-beamed"></i>
+                    </div>
+                    <h4>Music & Dance</h4>
+                    <p>From Afrobeats to traditional drums, African music moves the soul and connects generations.</p>
+                </div>
+                <div class="col-md-3 culture-item fade-in">
+                    <div class="culture-icon">
+                        <i class="bi bi-palette"></i>
+                    </div>
+                    <h4>Art & Crafts</h4>
+                    <p>Vibrant textiles, sculptures, and paintings that tell stories of our ancestors and dreams.</p>
+                </div>
+                <div class="col-md-3 culture-item fade-in">
+                    <div class="culture-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <h4>Stories & Wisdom</h4>
+                    <p>Ancient proverbs and folktales that carry the wisdom of countless generations.</p>
+                </div>
+                <div class="col-md-3 culture-item fade-in">
+                    <div class="culture-icon">
+                        <i class="bi bi-cup-hot"></i>
+                    </div>
+                    <h4>Cuisine</h4>
+                    <p>Flavors that dance on the tongue - from jollof rice to injera, food is love made visible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="section">
+        <div class="container">
+            <h2 class="section-title">Ubuntu Community</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h3>Unity in Diversity</h3>
+                        <p>Celebrating the beautiful diversity across 54 African nations, each with unique traditions yet bound by shared values of community and respect.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="bi bi-heart-hands"></i>
+                        </div>
+                        <h3>Ubuntu Philosophy</h3>
+                        <p>"I am because we are" - This profound African philosophy emphasizes our interconnectedness and shared humanity.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <h3>Ancestral Wisdom</h3>
+                        <p>Honoring the knowledge and traditions passed down through generations, keeping our roots strong while growing toward the future.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Section -->
+    <section id="innovation" class="section" style="background: var(--warm-white);">
+        <div class="container">
+            <h2 class="section-title">African Innovation</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="fade-in">
+                        <h3 style="color: var(--african-red); font-family: 'Oswald', sans-serif;">Rising Tech Hub</h3>
+                        <p class="lead">Africa is rapidly becoming a global technology powerhouse, with innovations in fintech, agriculture, healthcare, and renewable energy leading the way.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Mobile payment solutions revolutionizing commerce</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Sustainable agriculture technologies</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Renewable energy innovations</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Healthcare accessibility solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="fade-in">
+                        <div style="font-size: 12rem; color: var(--african-orange); opacity: 0.7;">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="background: linear-gradient(135deg, var(--african-green), var(--african-gold));">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title" style="color: white;">Join Our Community</h2>
+                    <p class="lead text-white mb-4">Connect with fellow Africans and friends of Africa from around the world. Share stories, celebrate culture, and build bridges.</p>
+                    <div class="d-flex justify-content-center flex-wrap gap-3">
+                        <a href="#" class="btn btn-african">Join Newsletter</a>
+                        <a href="#" class="btn btn-outline-african" style="border-color: white; color: white;">Get Involved</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Ubuntu Spirit</h5>
+                    <p>Celebrating African excellence and fostering global connections through the beautiful philosophy of Ubuntu.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#culture">Culture</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#innovation">Innovation</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Cultural Highlights</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Music & Dance</a></li>
+                        <li><a href="#">Art & Crafts</a></li>
+                        <li><a href="#">Traditional Cuisine</a></li>
+                        <li><a href="#">Languages</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Connect</h5>
+                    <p><i class="bi bi-envelope me-2"></i>hello@ubuntuspirit.com</p>
+                    <p><i class="bi bi-phone me-2"></i>+1 (555) 123-4567</p>
+                    <p><i class="bi bi-geo-alt me-2"></i>Global Community</p>
+                </div>
+            </div>
+            <hr style="border-color: var(--african-gold);">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Ubuntu Spirit. Made with <i class="bi bi-heart-fill" style="color: var(--african-red);"></i> for Africa and the world.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add active class to navigation items on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add some interactive elements
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Welcome message
+        setTimeout(() => {
+            console.log('🌍 Karibu! Welcome to Ubuntu Spirit - where African culture meets modern innovation! 🎉');
+        }, 1000);
+    </script>
+</body>
+
+</html>
